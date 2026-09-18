@@ -1,0 +1,70 @@
+.right-aside{
+    margin: 0;
+  }
+  
+th{
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.center{
+  text-align: center;
+}
+
+.form,
+.my-form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.form{
+  gap: 10px;
+}
+
+.shadow-block{
+  background: rgba(0,0,0,0.4);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.my-form-control{
+  width: 100%;
+}
+
+.cl-tb{
+  width: 20px;
+}
+
+/* --- Первая строка --- */
+thead th {
+  position: sticky;
+  top: 0;
+  background: #2f323e;
+  z-index: 2;          /* чтобы не перекрывалась */
+}
+
+/* --- Первый столбец --- */
+tbody td:nth-child(1),
+thead th:nth-child(1),
+tbody td:nth-child(2),
+thead th:nth-child(2) {
+  position: sticky;
+  left: 0;
+  background: #2f323e;
+  z-index: 1;
+}
+
+tbody td:nth-child(2),
+thead th:nth-child(2) {
+  left: 33px;          /* ширина первого столбца */
+}
+
+thead th:nth-child(2) {
+  z-index: 3; /* чтобы не перекрывалась первой строкой и первым столбцом */
+}
+
+table {
+  border-collapse: collapse;
+  width: 1000px;       /* больше контейнера, чтобы была прокрутка */
+}

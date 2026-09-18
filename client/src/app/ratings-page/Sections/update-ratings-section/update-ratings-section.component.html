@@ -1,0 +1,114 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <h3 class="box-title">Üýtgetmek baha</h3> </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box p-0">
+            <div class="page-aside">
+                <div class="left-aside">
+                    <div class="scrollable">
+                        <ul class="list-style-none">
+                            <li class="box-label"><a (click)="reserve()"><b>Hemmesi baha</b><span><b *ngIf="faculties_find_ratings">{{getLengthAllRatings()}}</b></span></a></li>
+                            <li class="divider"></li>
+                            <li *ngFor="let i of faculties_find_ratings">
+                                <a (click)="searchFaculties(i.id)">{{i.name}} <span>{{getLengthAllFacultiesRatings(i.groups)}}</span></a>
+                                <ul class="padding-left-20">
+                                  <li *ngFor="let j of i.groups">
+                                    <a (click)="searchGroups(j.id)">{{j.course}} {{j.name}} <span>{{j.students.length}}</span></a>
+                                  </li>
+                                </ul>
+                            </li>                        
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.left-aside-column-->
+                <div class="right-aside">
+                    <div class="right-page-header">
+                    <h3>baha </h3>
+                    <div class="pull-right">
+                        <input type="text" id="demo-input-search2" placeholder="gözlemek" class="form-control" [(ngModel)]="search">
+                    </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="scrollable">
+                        <div class="table-responsive">
+                            <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Talyp Ady</th>
+                                        <th>Baha</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let i of ratings; let ind = index" [style]="isSearch(i.name)?'':'display: none'">
+                                        <td>{{ind+1}}</td>
+                                        <td>
+                                            {{i.students.name}}
+                                        </td>
+                                        <td>
+                                            {{i.rating}}
+                                        </td>
+                                        <td>
+                                            <button (click)="checkObj(i)" class="btn btn-block btn-warning">Täzelen</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="responsive-modal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [style]="modalUpdate?'display: block; padding-right: 15px;':'display: none; padding-right: 15px;'">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button (click)="modalUpdate = false" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">baha täzelenmesi</h4> </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <label class="exampleInputEmail1">Baha</label>
+                        <div class="exampleInputEmail1">
+                            <select [(ngModel)]="rating" class="form-control">
+                              <option value="-1" style="display: none;" disabled>Saklaň Baha</option>
+                              <option [value]="i" *ngFor="let i of ratingMas">{{i}}</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="exampleInputEmail1">Žurnal</label>
+                        <div class="exampleInputEmail1">
+                            <select [(ngModel)]="journalId" class="form-control">
+                              <option value="-1" style="display: none;" disabled>Saklaň Žurnal</option>
+                              <option [value]="i.id" *ngFor="let i of journals">{{i.groups.course}} {{i.groups.name}}</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="exampleInputEmail1">Talyp</label>
+                        <div class="exampleInputEmail1">
+                            <select [(ngModel)]="studentsId" class="form-control">
+                              <option value="-1" style="display: none;" disabled>Saklaň Talyp</option>
+                              <option [value]="i.id" *ngFor="let i of students">{{i.name}}</option>
+                            </select>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="modalUpdate = false" type="button" class="btn btn-default waves-effect" data-dismiss="modal">Ýapyň</button>
+                <button (click)="modalUpdate = false; putRating()" type="button" class="btn btn-danger waves-effect waves-light">Üýtgetmeleri ýatda sakla</button>
+            </div>
+        </div>
+    </div>
+</div>

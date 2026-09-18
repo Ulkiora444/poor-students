@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <h3 class="box-title">Dörediň Journal</h3> </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box p-0">
+            <!-- .left-right-aside-column-->
+            <div class="page-aside">
+              <div class="right-aside">
+                <div class="row">
+                  <div class="col-sm-12 col-xs-12">
+                      <div>
+                          <div class="form-group">
+                            <label class="exampleInputEmail1">Toparlar</label>
+                            <div class="exampleInputEmail1">
+                                <select [(ngModel)]="groupsId" class="form-control">
+                                  <option value="-1" style="display: none;" disabled>Saýlaň Toparlar</option>
+                                  <option [value]="i.id" *ngFor="let i of groups">{{i.course}} {{i.name}}</option>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="exampleInputEmail1">Mugallymlar</label>
+                            <div class="exampleInputEmail1">
+                                <select [(ngModel)]="teachersId" class="form-control">
+                                  <option value="-1" style="display: none;" disabled>Saýlaň Mugallymlar</option>
+                                  <option [value]="i.id" *ngFor="let i of teachers">{{i.name}}</option>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="exampleInputEmail1">Dersleri</label>
+                            <div class="exampleInputEmail1">
+                                <select [(ngModel)]="subjectsId" class="form-control">
+                                  <option value="-1" style="display: none;" disabled>Saýlaň Dersleri</option>
+                                  <option [value]="i.id" *ngFor="let i of subjects">{{i.name}}</option>
+                                </select>
+                            </div>
+                          </div>
+                          <button (click)="postJournal()" type="submit" class="btn btn-success waves-effect waves-light m-r-10">Iber</button>
+                        </div >
+                  </div>
+              </div>
+              </div>
+                <!-- .left-aside-column-->
+            </div>
+            <!-- /.left-right-aside-column-->
+        </div>
+    </div>
+  </div>

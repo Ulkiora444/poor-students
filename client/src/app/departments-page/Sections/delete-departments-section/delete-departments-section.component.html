@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <h3 class="box-title">Öçür Kafedralar</h3> </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box p-0">
+            <div class="page-aside">
+                <div class="left-aside">
+                    <div class="scrollable">
+                        <ul class="list-style-none">
+                            <li class="box-label"><a (click)="reserve()"><b>Hemmesi Kafedralar</b><span><b *ngIf="faculties_find_departments">{{getLengthAllDepartments()}}</b></span></a></li>
+                            <li class="divider"></li>
+                            <li *ngFor="let i of faculties_find_departments"><a (click)="searchFaculties(i.id)">{{i.name}} <span>{{i.departments.length}}</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.left-aside-column-->
+                <div class="right-aside">
+                    <div class="right-page-header">
+                    <h3>Kafedralar </h3>
+                    <div class="pull-right">
+                        <input type="text" id="demo-input-search2" placeholder="gözlemek" class="form-control" [(ngModel)]="search">
+                    </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="scrollable">
+                        <div class="table-responsive">
+                            <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Ady</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let i of departments; let ind = index" [style]="isSearch(i.name)?'':'display: none'">
+                                    <td>{{ind+1}}</td>
+                                        <td>
+                                        {{i.name}}
+                                        </td>
+
+                                        <td>
+                                            <!-- <button (click)="modalDelete = true; checkId = i.id" class="btn btn-block btn-danger">Öçür</button> -->
+                                            <button (click)="deleteDepartment(i.id)" class="btn btn-block btn-danger">Öçür</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

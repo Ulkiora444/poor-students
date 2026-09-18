@@ -1,0 +1,18 @@
+<div id="wrapper">
+
+    <app-nav></app-nav>
+
+    <div id="page-wrapper" style="min-height: 880px;">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Žurnal Sahypa</h4> 
+                </div>
+            </div>
+
+            <app-view-journal-section *ngIf="getIndexSubRouter()==0"></app-view-journal-section>
+            <app-create-journal-section *ngIf="getIndexSubRouter()==1"></app-create-journal-section>
+            <app-update-journal-section *ngIf="getIndexSubRouter()==2"></app-update-journal-section>
+            <app-delete-journal-section *ngIf="getIndexSubRouter()==3"></app-delete-journal-section>
+    </div>
+</div>

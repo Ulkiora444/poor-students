@@ -1,0 +1,12 @@
+.right-aside{
+    margin: 0;
+  }
+  
+table.table-striped tr th{
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.center{
+  text-align: center;
+}

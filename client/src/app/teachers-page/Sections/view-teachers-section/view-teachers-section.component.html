@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box">
+            <h3 class="box-title">Görmek Mugallymlar</h3> </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box p-0">
+            <div class="page-aside">
+                <div class="left-aside">
+                    <div class="scrollable">
+                        <ul class="list-style-none">
+                            <li class="box-label"><a (click)="reserve()"><b>Hemmesi Mugallymlar</b><span><b *ngIf="faculties_find_teachers">{{getLengthAllTeachers()}}</b></span></a></li>
+                            <li class="divider"></li>
+                            <li *ngFor="let i of faculties_find_teachers">
+                                <a (click)="searchFaculties(i.id)">{{i.name}} <span>{{getLengthAllDepartmentsTeachers(i.departments)}}</span></a>
+                                <ul class="padding-left-20">
+                                  <li *ngFor="let j of i.departments">
+                                    <a (click)="searchDepartments(j.id)">{{j.name}} <span>{{j.teachers.length}}</span></a>
+                                  </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.left-aside-column-->
+                <div class="right-aside">
+                    <div class="right-page-header">
+                    <h3>Mugallymlar </h3>
+                    <div class="pull-right">
+                        <input type="text" id="demo-input-search2" placeholder="gözlemek" class="form-control" [(ngModel)]="search">
+                    </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="scrollable">
+                        <div class="table-responsive">
+                            <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Ady</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let i of teachers; let ind = index" [style]="isSearch(i.name)?'':'display: none'">
+                                    <td>{{ind+1}}</td>
+                                        <td>
+                                        {{i.name}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

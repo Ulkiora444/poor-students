@@ -1,0 +1,81 @@
+<div class="navbar-default sidebar">
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><div class="sidebar-nav slimscrollsidebar" style="overflow: hidden; width: auto; height: 100%;">
+        <div class="sidebar-head">
+            <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Awtomatik</span></h3> </div>
+        <ul class="nav" id="side-menu">
+            <li [class]="getIndexRouter()==8?'active':''"><a routerLink="/home" (click)="setRouter(8, -1)" [class]="getIndexRouter()==8?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Baş</span></a></li>
+            <li class="devider"></li>
+            <li [class]="getIndexRouter()==1?'active':''"><a routerLink="/faculties" (click)="setRouter(1, -1)" [class]="getIndexRouter()==1?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Fakultetlar<span class="fa arrow"></span></span></a>
+                <ul [class]="getIndexRouter()==1?'nav nav-second-level collapse in':'nav nav-second-level collapse'">
+                    <li><a (click)="setRouter(1, 0)" [class]="getIndexSubRouter()==0?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Gör</span></a></li>
+                    <li><a (click)="setRouter(1, 1)" [class]="getIndexSubRouter()==1?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Dörediň</span></a></li>
+                    <li><a (click)="setRouter(1, 2)" [class]="getIndexSubRouter()==2?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Täzelen</span></a></li>
+                    <li><a (click)="setRouter(1, 3)" [class]="getIndexSubRouter()==3?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Öçür</span></a></li>
+                </ul>
+            </li>
+            <li class="devider"></li>
+            <li [class]="getIndexRouter()==0?'active':''"><a routerLink="/departments" (click)="setRouter(0, -1)" [class]="getIndexRouter()==0?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Kafedralar<span class="fa arrow"></span></span></a>
+                <ul [class]="getIndexRouter()==0?'nav nav-second-level collapse in':'nav nav-second-level collapse'">
+                    <li><a (click)="setRouter(0, 0)" [class]="getIndexSubRouter()==0?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Gör</span></a></li>
+                    <li><a (click)="setRouter(0, 1)" [class]="getIndexSubRouter()==1?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Dörediň</span></a></li>
+                    <li><a (click)="setRouter(0, 2)" [class]="getIndexSubRouter()==2?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Täzelen</span></a></li>
+                    <li><a (click)="setRouter(0, 3)" [class]="getIndexSubRouter()==3?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Öçür</span></a></li>
+                </ul>
+            </li>
+            <li class="devider"></li>
+            <li [class]="getIndexRouter()==2?'active':''"><a routerLink="/groups" (click)="setRouter(2, -1)" [class]="getIndexRouter()==2?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Toparlar<span class="fa arrow"></span></span></a>
+                <ul [class]="getIndexRouter()==2?'nav nav-second-level collapse in':'nav nav-second-level collapse'">
+                    <li><a (click)="setRouter(2, 0)" [class]="getIndexSubRouter()==0?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Gör</span></a></li>
+                    <li><a (click)="setRouter(2, 1)" [class]="getIndexSubRouter()==1?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Dörediň</span></a></li>
+                    <li><a (click)="setRouter(2, 2)" [class]="getIndexSubRouter()==2?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Täzelen</span></a></li>
+                    <li><a (click)="setRouter(2, 3)" [class]="getIndexSubRouter()==3?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Öçür</span></a></li>
+                </ul>
+            </li>
+            <li class="devider"></li>
+            <li [class]="getIndexRouter()==7?'active':''"><a routerLink="/teachers" (click)="setRouter(7, -1)" [class]="getIndexRouter()==7?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Mugallymlar<span class="fa arrow"></span></span></a>
+                <ul [class]="getIndexRouter()==7?'nav nav-second-level collapse in':'nav nav-second-level collapse'">
+                    <li><a (click)="setRouter(7, 0)" [class]="getIndexSubRouter()==0?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Gör</span></a></li>
+                    <li><a (click)="setRouter(7, 1)" [class]="getIndexSubRouter()==1?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Dörediň</span></a></li>
+                    <li><a (click)="setRouter(7, 2)" [class]="getIndexSubRouter()==2?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Täzelen</span></a></li>
+                    <li><a (click)="setRouter(7, 3)" [class]="getIndexSubRouter()==3?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Öçür</span></a></li>
+                </ul>
+            </li>
+            <li class="devider"></li>
+            <li [class]="getIndexRouter()==6?'active':''"><a routerLink="/subjects" (click)="setRouter(6, -1)" [class]="getIndexRouter()==6?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Dersleri<span class="fa arrow"></span></span></a>
+                <ul [class]="getIndexRouter()==6?'nav nav-second-level collapse in':'nav nav-second-level collapse'">
+                    <li><a (click)="setRouter(6, 0)" [class]="getIndexSubRouter()==0?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Gör</span></a></li>
+                    <li><a (click)="setRouter(6, 1)" [class]="getIndexSubRouter()==1?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Dörediň</span></a></li>
+                    <li><a (click)="setRouter(6, 2)" [class]="getIndexSubRouter()==2?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Täzelen</span></a></li>
+                    <li><a (click)="setRouter(6, 3)" [class]="getIndexSubRouter()==3?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Öçür</span></a></li>
+                </ul>
+            </li>
+            <li class="devider"></li>
+            <li [class]="getIndexRouter()==3?'active':''"><a routerLink="/journal" (click)="setRouter(3, -1)" [class]="getIndexRouter()==3?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Žurnal<span class="fa arrow"></span></span></a>
+                <ul [class]="getIndexRouter()==3?'nav nav-second-level collapse in':'nav nav-second-level collapse'">
+                    <li><a (click)="setRouter(3, 0)" [class]="getIndexSubRouter()==0?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Gör</span></a></li>
+                    <li><a (click)="setRouter(3, 1)" [class]="getIndexSubRouter()==1?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Dörediň</span></a></li>
+                    <li><a (click)="setRouter(3, 2)" [class]="getIndexSubRouter()==2?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Täzelen</span></a></li>
+                    <li><a (click)="setRouter(3, 3)" [class]="getIndexSubRouter()==3?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Öçür</span></a></li>
+                </ul>
+            </li>
+            <li class="devider"></li>
+            <li [class]="getIndexRouter()==5?'active':''"><a routerLink="/students" (click)="setRouter(5, -1)" [class]="getIndexRouter()==5?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Talyplar<span class="fa arrow"></span></span></a>
+                <ul [class]="getIndexRouter()==5?'nav nav-second-level collapse in':'nav nav-second-level collapse'">
+                    <li><a (click)="setRouter(5, 0)" [class]="getIndexSubRouter()==0?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Gör</span></a></li>
+                    <li><a (click)="setRouter(5, 1)" [class]="getIndexSubRouter()==1?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Dörediň</span></a></li>
+                    <li><a (click)="setRouter(5, 2)" [class]="getIndexSubRouter()==2?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Täzelen</span></a></li>
+                    <li><a (click)="setRouter(5, 3)" [class]="getIndexSubRouter()==3?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Öçür</span></a></li>
+                </ul>
+            </li>
+            <li class="devider"></li>
+            <li [class]="getIndexRouter()==4?'active':''"><a routerLink="/ratings" (click)="setRouter(4, -1)" [class]="getIndexRouter()==4?'waves-effect active':'waves-effect'"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Baha<span class="fa arrow"></span></span></a>
+                <ul [class]="getIndexRouter()==4?'nav nav-second-level collapse in':'nav nav-second-level collapse'">
+                    <li><a (click)="setRouter(4, 0)" [class]="getIndexSubRouter()==0?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Gör</span></a></li>
+                    <li><a (click)="setRouter(4, 1)" [class]="getIndexSubRouter()==1?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Dörediň</span></a></li>
+                    <li><a (click)="setRouter(4, 2)" [class]="getIndexSubRouter()==2?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Täzelen</span></a></li>
+                    <li><a (click)="setRouter(4, 3)" [class]="getIndexSubRouter()==3?'active':''"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Öçür</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div><div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.5); width: 6px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; left: 1px; height: 457.14px;"></div><div class="slimScrollRail" style="width: 6px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; left: 1px;"></div></div>
+</div>

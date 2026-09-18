@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-12">
+      <div class="white-box">
+          <h3 class="box-title">Dörediň Kafedralar</h3> </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="white-box p-0">
+            <!-- .left-right-aside-column-->
+            <div class="page-aside">
+              <div class="right-aside">
+                <div class="row">
+                  <div class="col-sm-12 col-xs-12">
+                      <div>
+                          <div class="form-group">
+                              <label for="exampleInputEmail1">Kafedralar Ady</label>
+                              <input [(ngModel)]="name" type="text" class="form-control" id="exampleInputEmail1" placeholder="Kafedralar Adyny Giriziň">
+                          </div>
+                          <div class="form-group">
+                            <label class="exampleInputEmail1">Giriş fakulteti</label>
+                            <div class="exampleInputEmail1">
+                                <select [(ngModel)]="facultiesId" class="form-control">
+                                  <option value="-1" style="display: none;" disabled>Giriş fakulteti</option>
+                                  <option [value]="i.id" *ngFor="let i of faculties">{{i.name}}</option>
+                                </select>
+                            </div>
+                          </div>
+                          <button (click)="postDepartment()" type="submit" class="btn btn-success waves-effect waves-light m-r-10">Iber</button>
+                        </div >
+                  </div>
+              </div>
+              </div>
+                <!-- .left-aside-column-->
+            </div>
+            <!-- /.left-right-aside-column-->
+        </div>
+    </div>
+  </div>

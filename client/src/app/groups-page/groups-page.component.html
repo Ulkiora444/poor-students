@@ -1,0 +1,18 @@
+<div id="wrapper">
+
+    <app-nav></app-nav>
+
+    <div id="page-wrapper" style="min-height: 880px;">
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">toparlary sahypa</h4> 
+                </div>
+            </div>
+
+            <app-view-groups-section *ngIf="getIndexSubRouter()==0"></app-view-groups-section>
+            <app-create-groups-section *ngIf="getIndexSubRouter()==1"></app-create-groups-section>
+            <app-update-groups-section *ngIf="getIndexSubRouter()==2"></app-update-groups-section>
+            <app-delete-groups-section *ngIf="getIndexSubRouter()==3"></app-delete-groups-section>
+    </div>
+</div>

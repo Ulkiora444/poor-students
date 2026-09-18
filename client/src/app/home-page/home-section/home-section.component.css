@@ -1,0 +1,20 @@
+h2{
+    color: #dce2ec !important;
+}
+
+small, .pull-right{
+    color: #96a2b4 !important;
+}
+
+.table tbody tr.advance-table-row{
+    transition: border 300ms;
+}
+
+.table tbody tr.advance-table-row:hover{
+    border: 2px solid #2cabe3;
+}
+
+.btn-danger{
+    color: white !important;
+    background: red !important;
+}

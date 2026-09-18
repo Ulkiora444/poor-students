@@ -1,0 +1,91 @@
+<div class="col-md-12">
+    <div class="white-box">
+        <h3 class="box-title">Çap etmek</h3>
+
+        <div class="page-aside">
+            <div class="right-aside">
+              <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <div>
+                        <div class="form-group">
+                          <label class="exampleInputEmail1">Saýlamak çap etmek</label>
+                          <div class="exampleInputEmail1">
+                              <select (change)="changedStudents = []" [(ngModel)]="indexCheckPrint" class="form-control">
+                                <option [value]="0">Hemesi</option>
+                                <option [value]="1">Saýlamak talyplar indeks</option>
+                                <option [value]="2">Saýlamak talyplar</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                        <label class="exampleInputEmail1">Bölek</label>
+                        <div class="exampleInputEmail1">
+                            <select [(ngModel)]="part" class="form-control">
+                                <option [value]="-1">Hemmesi</option>
+                                <option [value]="1">1</option>
+                                <option [value]="2">2</option>
+                                <option [value]="3">3</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="form-group" *ngIf="indexCheckPrint==1">
+                            <label>Saýlamak Talyplar indeks</label>
+                            <input (input)="inputStudents()" [(ngModel)]="index_students" type="text" class="form-control" placeholder="Saýlamak indeks Talyplar 1, 2, 3, 4 or 1 2 3 4 5">
+                        </div>
+                        <div class="form-group">
+                        <label class="exampleInputEmail1">Aý</label>
+                        <div class="exampleInputEmail1">
+                            <select [(ngModel)]="month" class="form-control">
+                                <option [value]="ind" *ngFor="let i of months; let ind = index">{{i}}</option>
+                            </select>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Ýyl</label>
+                            <input [(ngModel)]="year" type="text" class="form-control" placeholder="Ýyl">
+                        </div>
+
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10" (click)="getPrint()">Iber</button>
+                      </div >
+                </div>
+            </div>
+              <!-- .left-aside-column-->
+          </div>
+
+        <div class="table-responsive manage-table">
+            <table class="table" cellspacing="14">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>#</th>
+                        <th width="150">Ady</th>
+                        <th>Topar</th>
+                        <th>Molim</th>
+                        <th>Dersi</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="indexCheckPrint!=2">
+                    <tr *ngFor="let i of getRatings(); let ind = index" [class]="isChangedStudents(ind+1)?'advance-table-row active':'advance-table-row'">
+                        <td width="10"></td>
+                        <td>{{ind+1}}</td>
+                        <td>{{i.students.name}}</td>
+                        <td>{{i.journal.groups.course}} {{i.journal.groups.name}}</td>
+                        <td>{{i.journal.teachers.name}}</td>
+                        <td>{{i.journal.subjects.name}}</td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="indexCheckPrint==2">
+                    <tr *ngFor="let i of getRatings(); let ind = index" (click)="changeStudent(ind+1)" [class]="isChangedStudents(ind+1)?'advance-table-row active':'advance-table-row'">
+                        <td width="10"></td>
+                        <td>{{ind+1}}</td>
+                        <td>{{i.students.name}}</td>
+                        <td>{{i.journal.groups.course}} {{i.journal.groups.name}}</td>
+                        <td>{{i.journal.teachers.name}}</td>
+                        <td>{{i.journal.subjects.name}}</td>
+                    </tr>   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
